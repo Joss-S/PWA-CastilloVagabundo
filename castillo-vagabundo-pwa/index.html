@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>El Castillo Vagabundo</title>
+
+    <meta name="theme-color" content="#2b4a6f">
+    <meta name="description" content="PWA El castillo Vagabundo (Studio Ghibli)">
+
+    <!-- iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Castillo">
+    <link rel="apple-touch-icon" href="img/icons/apple-touch-icon.png">
+
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/icons/icon-192x192.png">
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="first">
+        <button id="salir-btn" class="icon-btn out oculto" aria-label="Salir">&#x21A9;</button>
+        <button id="notif-btn" class="icon-btn bell oculto" aria-label="Activar notificaciones">&#x1F514;</button>
+        <span id="titulo">Elige tu personaje</span>
+        <button id="nuevo-btn" class="icon-btn new oculto" aria-label="Nuevo mensaje">&#x270E;</button>
+    </header>
+    <div id="estado" class="estado oculto"></div>
+
+    <!-- Modal nuevo mensaje -->
+    <div id="modal" class="oculto">
+        <img id="modal-avatar" src="img/avatars/howl.jpg" alt="">
+        <header class="first">
+            <button id="cancel-btn" class="icon-btn out" aria-label="Cancelar">&#x2715;</button>
+            <span id="titulo-modal">Nuevo mensaje</span>
+        </header>
+        <div class="nuevo-mensaje">
+            <textarea id="txtMensaje" placeholder="Escribe en el castillo..." rows="5"></textarea>
+        </div>
+        <button id="post-btn" class="fab" aria-label="Enviar">&#x27A4;</button>
+    </div>
+
+    <!-- Selección de personaje -->
+    <section id="seleccion" class="seleccion animated fadeIn fast">
+        <div><img data-user="howl" src="img/avatars/howl.jpg" alt="Howl" class="seleccion-avatar"><p>Howl</p></div>
+        <div><img data-user="sophie" src="img/avatars/sophie.jpg" alt="Sophie" class="seleccion-avatar"><p>Sophie</p></div>
+        <div><img data-user="calcifer" src="img/avatars/calcifer.jpg" alt="Calcifer" class="seleccion-avatar"><p>Calcifer</p></div>
+        <div><img data-user="markl" src="img/avatars/markl.jpg" alt="Markl" class="seleccion-avatar"><p>Markl</p></div>
+        <div><img data-user="nabo" src="img/avatars/nabo.jpg" alt="Cabeza de Nabo" class="seleccion-avatar"><p>Cabeza de Nabo</p></div>
+    </section>
+
+    <!-- Línea de mensajes -->
+    <ul id="timeline" class="timeline oculto"></ul>
+
+    <script src="js/libs/jquery.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
